@@ -1,2 +1,2 @@
-# spwatch
-IoT application for water monitoring
+# Spwatch
+IoT application for domestic water monitoring
