@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+    <head>
+      <meta charset="utf-8">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $.ajax({
+                    url: 'http://localhost:3000/ten_last_minutes.json',
+                    dataType: 'jsonp',
+                    success: function(dataWeGotViaJsonp){
+                        var text = '';
+                        var len = dataWeGotViaJsonp.length;
+                        console.log(len);
+                        for(var i=0;i<len;i++){
+                            twitterEntry = dataWeGotViaJsonp[i];
+                            text += '<p>' + twitterEntry + '</p>'
+                        }
+                        $('#twitterFeed').html(text);
+                    }
+                });
+            })
+        </script>
+    </head>
+    <body>
+        <div id = 'twitterFeed'></div>
+    </body>
+</html>

@@ -10,14 +10,14 @@
   <style>
     #data-chart{
       width: 100% !important;
-      max-width: 1200px;
+      max-width: 1100px;
       height: auto !important;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -38,9 +38,6 @@
       </div>
     </nav>
 
-    <br/>
-    <br/>
-    <br/>
     <div class="jumbotron">
       <h1>Spwatch</h1>
       <p class="lead">Aplicación de IoT para el monitoreo del agua.</p>
@@ -49,44 +46,12 @@
 
     <div class="row">
       <div class="col-md-12">
-          <canvas id="data-chart" width="1200" height="300">
-            Error al cargar los datos.
-          </canvas>
+        <canvas id="data-chart" width="1100" height="300">
+          Error al cargar los datos.
+        </canvas>
+        <a id="mainChart" class="btn btn-lg btn-success" href="#" role="button">10 Minutos</a>
       </div>
     </div>
-
-    <script>
-      var ctx = document.getElementById("data-chart").getContext("2d");
-
-      var data = {
-          labels: ["January", "February", "March", "April", "May", "June", "July"],
-          datasets: [
-              {
-                  label: "My First dataset",
-                  fillColor: "rgba(220,220,220,0.2)",
-                  strokeColor: "rgba(220,220,220,1)",
-                  pointColor: "rgba(220,220,220,1)",
-                  pointStrokeColor: "#fff",
-                  pointHighlightFill: "#fff",
-                  pointHighlightStroke: "rgba(220,220,220,1)",
-                  data: [65, 59, 80, 81, 56, 55, 40]
-              },
-              {
-                  label: "My Second dataset",
-                  fillColor: "rgba(151,187,205,0.2)",
-                  strokeColor: "rgba(151,187,205,1)",
-                  pointColor: "rgba(151,187,205,1)",
-                  pointStrokeColor: "#fff",
-                  pointHighlightFill: "#fff",
-                  pointHighlightStroke: "rgba(151,187,205,1)",
-                  data: [28, 48, 40, 19, 86, 27, 90]
-              }
-          ]
-      };
-
-      var myNewChart = new Chart(ctx).Line(data);
-    </script>
-
 
     <footer class="footer">
       <p>Proyecto Spwatch.</p>
@@ -97,5 +62,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/client.js"></script>
 </body>
 </html>
