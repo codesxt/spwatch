@@ -12,11 +12,7 @@
                     success: function(dataWeGotViaJsonp){
                         var text = '';
                         var len = dataWeGotViaJsonp.length;
-                        console.log(len);
-                        for(var i=0;i<len;i++){
-                            twitterEntry = dataWeGotViaJsonp[i];
-                            text += '<p>' + twitterEntry + '</p>'
-                        }
+                        console.log(dataWeGotViaJsonp.data);
                         $('#twitterFeed').html(text);
                     }
                 });
