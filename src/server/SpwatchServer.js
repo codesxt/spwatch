@@ -24,7 +24,7 @@ db.serialize(function() {
 });
 
 var sp = new serialport.SerialPort(portName, {
-		baudRate: 9600,
+		baudRate: 38400,
 		dataBits: 8,
 		parity: 'none',
 		stopBits: 1,
@@ -36,8 +36,8 @@ sp.on('data', function(input) {
 	//Receive data from Arduino
   var d = new Date();
   var year = d.getFullYear();
-  var month = d.getMonth();
-  var day = d.getDay();
+  var month = d.getUTCMonth()+1;
+  var day = d.getUTCDate();
   var hours = d.getHours();
   var mins = d.getMinutes();
 
